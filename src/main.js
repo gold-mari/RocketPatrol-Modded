@@ -3,6 +3,7 @@
 // [Mod name here]
 // 
 // Mod list:
+//      3: Display the time remaining (in seconds) on the screen
 //      X 3: Implement parallax scrolling for the background
 //      X 3: Create 4 new explosion sound effects and randomize which one plays on impact
 //      X 1: Create a new scrolling tile sprite for the background

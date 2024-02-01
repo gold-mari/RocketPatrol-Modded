@@ -50,7 +50,6 @@ class Play extends Phaser.Scene {
             },
             fixedWidth: 100
         }
-
         this.scoreLeft = this.add.text(borderUISize+borderPadding, borderUISize+(borderPadding*2), this.p1Score, scoreConfig);
 
         // Game over flag
@@ -66,6 +65,12 @@ class Play extends Phaser.Scene {
                           "Press (R) to Restart or <- for Menu", scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+
+        // initialize time remaining
+        this.timeRemaining = game.settings.gameTimer/1000;
+        // display time remaining
+        this.timeRight = this.add.text(game.config.width-borderUISize-(borderPadding*4), borderUISize+(borderPadding*2), this.timeRemaining, scoreConfig);
+
     }
 
     update()
@@ -103,6 +108,10 @@ class Play extends Phaser.Scene {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
         }
+
+        // update time remaining
+        this.timeRemaining = (game.settings.gameTimer-this.clock.elapsed)/1000;
+        this.timeRight.text = Math.floor(this.timeRemaining).toString().padStart(3, '0');
     }
 
     checkCollision(rocket, ship)
