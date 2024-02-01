@@ -3,11 +3,17 @@
 // [Mod name here]
 // 
 // Mod list:
+//      X 3: Implement parallax scrolling for the background
 //      X 3: Create 4 new explosion sound effects and randomize which one plays on impact
+//      X 1: Create a new scrolling tile sprite for the background
+
 let config = {
     type: Phaser.AUTO,
     width: 640,
     height: 480,
+    render: {
+        pixelArt: true
+    },
     scene: [ Menu, Play ]
 }
 
