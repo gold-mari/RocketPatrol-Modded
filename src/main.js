@@ -9,6 +9,13 @@
 //      X 3: Implement parallax scrolling for the background
 //      X 3: Create 4 new explosion sound effects and randomize which one plays on impact
 //      X 1: Create a new scrolling tile sprite for the background
+//
+// Estimated time:
+//      I estimate I completed this assignment start-to-end in roughly 2 hours.
+//
+// Citations:
+//      Credit to user spkrtn on stackoverflow for describing the usage of the padStart function to pad zeros to a number.
+//      https://stackoverflow.com/questions/1127905/how-can-i-format-an-integer-to-a-specific-length-in-javascript
 
 let config = {
     type: Phaser.AUTO,
