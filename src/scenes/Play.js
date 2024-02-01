@@ -70,7 +70,6 @@ class Play extends Phaser.Scene {
         this.timeRemaining = game.settings.gameTimer/1000;
         // display time remaining
         this.timeRight = this.add.text(game.config.width-borderUISize-(borderPadding*4), borderUISize+(borderPadding*2), this.timeRemaining, scoreConfig);
-
     }
 
     update()
@@ -145,8 +144,16 @@ class Play extends Phaser.Scene {
         // update score!
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;
+        // update time!
+        this.clock.elapsed -= game.settings.timeGainOnHit;
         // play SFX
         this.playExplodeSFX();
+    }
+
+    shipMiss()
+    {
+        // called from rocket when we don't hit any ships.
+        this.clock.elapsed += game.settings.timeLostOnMiss;
     }
 
     playExplodeSFX()
