@@ -88,18 +88,16 @@ class Play extends Phaser.Scene {
             this.ship03.update();
         }
 
-        if (this.checkCollision(this.p1Rocket, this.ship03))
-        {
+        // Collision checking!
+        if (this.checkCollision(this.p1Rocket, this.ship03)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship03);
         }
-        if (this.checkCollision(this.p1Rocket, this.ship02))
-        {
+        if (this.checkCollision(this.p1Rocket, this.ship02)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship02);
         }
-        if (this.checkCollision(this.p1Rocket, this.ship01))
-        {
+        if (this.checkCollision(this.p1Rocket, this.ship01)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
         }
@@ -137,6 +135,15 @@ class Play extends Phaser.Scene {
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;
         // play SFX
-        this.sound.play("sfx-explosion");
+        this.playExplodeSFX();
+    }
+
+    playExplodeSFX()
+    {
+        let rng = Math.floor(Math.random() * 65);
+        if (rng < 20) this.sound.play("sfx-explosion1");
+        else if (rng < 40) this.sound.play("sfx-explosion2");
+        else if (rng < 60) this.sound.play("sfx-explosion3");
+        else this.sound.play("sfx-explosion4");
     }
 }

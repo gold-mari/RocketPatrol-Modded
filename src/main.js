@@ -1,3 +1,9 @@
+// CMPM 120, Winter 2024
+// Dylan Mahler
+// [Mod name here]
+// 
+// Mod list:
+//      X 3: Create 4 new explosion sound effects and randomize which one plays on impact
 let config = {
     type: Phaser.AUTO,
     width: 640,
