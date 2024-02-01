@@ -1,8 +1,9 @@
 // CMPM 120, Winter 2024
 // Dylan Mahler
-// [Mod name here]
+// Rocket Patrol: Revengeance of the Speedyships
 // 
 // Mod list:
+//      X 5: Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points
 //      X 5: Implement a new timing/scoring mechanism that adds time to the clock for successful hits and subtracts time for misses
 //      X 3: Display the time remaining (in seconds) on the screen
 //      X 3: Implement parallax scrolling for the background

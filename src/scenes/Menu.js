@@ -8,6 +8,7 @@ class Menu extends Phaser.Scene {
     {
         // load images / tile sprites
         this.load.image("rocket", "./assets/rocket.png");
+        this.load.image("speedyship", "./assets/speedyship.png");
         this.load.image("spaceship", "./assets/spaceship.png");
         this.load.image("starfield", "./assets/starfield.png");
         this.load.image("planets", "./assets/planets.png");
@@ -78,6 +79,7 @@ class Menu extends Phaser.Scene {
                 gameTimer: 60000,
                 timeLostOnMiss: 1000,   // 1 second
                 timeGainOnHit: 2000,    // 2 seconds
+                speedyshipMultiplier: 1.5
             }
             this.sound.play("sfx-select");
             this.scene.start("playScene");
@@ -91,6 +93,7 @@ class Menu extends Phaser.Scene {
                 gameTimer: 45000,
                 timeLostOnMiss: 2000,   // 2 seconds
                 timeGainOnHit: 1000,    // 1 second
+                speedyshipMultiplier: 2
             }
             this.sound.play("sfx-select");
             this.scene.start("playScene");

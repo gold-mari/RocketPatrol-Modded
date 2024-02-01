@@ -32,6 +32,10 @@ class Play extends Phaser.Scene {
         this.ship02 = new Spaceship(this, game.config.width+borderUISize*3, borderUISize*5+borderPadding*2, 'spaceship', 0, 20).setOrigin(0,0);
         this.ship03 = new Spaceship(this, game.config.width, (borderUISize*6)+(borderPadding*4), 'spaceship', 0, 10).setOrigin(0,0);
 
+        // add 2 speedyships!
+        this.speedyship01 = new Speedyship(this, game.config.width+borderUISize*6, borderUISize*4+borderPadding*2, 'speedyship', 0, 60).setOrigin(0,0);
+        this.speedyship02 = new Speedyship(this, game.config.width+borderUISize*3, borderUISize*5+borderPadding*4, 'speedyship', 0, 40).setOrigin(0,0);
+
         // initialize score
         this.p1Score = 0;
 
@@ -92,6 +96,8 @@ class Play extends Phaser.Scene {
             this.ship01.update();
             this.ship02.update();
             this.ship03.update();
+            this.speedyship01.update();
+            this.speedyship02.update();
         }
 
         // Collision checking!
@@ -106,6 +112,14 @@ class Play extends Phaser.Scene {
         if (this.checkCollision(this.p1Rocket, this.ship01)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
+        }
+        if (this.checkCollision(this.p1Rocket, this.speedyship01)) {
+            this.p1Rocket.reset();
+            this.shipExplode(this.speedyship01);
+        }
+        if (this.checkCollision(this.p1Rocket, this.speedyship02)) {
+            this.p1Rocket.reset();
+            this.shipExplode(this.speedyship02);
         }
 
         // update time remaining
